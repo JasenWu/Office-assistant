@@ -1,0 +1,32 @@
+﻿/* 全局样式 */
+body{font: 12px/1.231 "微软雅黑",Tahoma,"宋体",sans-serif normal;text-align:center;background-color:#454545; background-image:url("../images/bg_top_1px.jpg"); background-repeat:repeat-x;min-width: 1024px;}
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0 auto;padding:0;border:0;}
+ul,ol{list-style-type:none;}
+select,input,img,select{vertical-align:middle;}
+a:link,a:hover,a:visited{
+text-decoration: none;
+outline:none;
+}
+.clearit{clear:both;}
+#page{width: 1024px;; overflow:hidden; margin:0 auto; position:relative;}
+.head{height:68px;}
+.logo{float:left;}
+.navlist{float:right;}
+.mainimg{height:322px; position:relative;}
+.mainimg .big_img{overflow:hidden;height:322px;}
+.mainimg .small_img{position:absolute;top:300px;left:420px;}
+.small_img li .num{display:none;}
+.small_img li{cursor:pointer;overflow:hidden;float:left;margin:0 9px;width:14px;height:14px; background-image:url("../images/point.png");}
+.small_img li.cur{ background-image:url("../images/point_cur.png");}
+#mainbody{height:190px;}
+#body_1{float:left; margin-top:10px; margin-left:50px;}
+#body_2{float:left; margin-top:10px; margin-left:50px;}
+#body_3{float:left; margin-top:10px;}
+.copyright{float:left;height:68px; text-align:right; width:961px; color:#b0b0b0; line-height:25px;}
+#bottom_1{float:left; margin-left:420px; margin-top:8px;}
+#bottom_1 a:link,a:hover,a:visited{
+	color:#b0b0b0;
+	text-decoration: none;
+	outline:none;
+}
+#bottom_2{float:right; margin-top:10px;}

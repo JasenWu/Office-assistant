@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <title>上海向杰信息科技有限公司 - 专业信息服务提供商</title>
+    <link rel="icon" href="images/favicon.ico"  type="image/x-icon">
+    <meta name="keywords" content="网站建设,团队平台,网站,网站维护,域名注册,空间主机,web,企业邮箱,在线客服,即时通讯,嵌入,通讯,空间,免费空间,博客,免费博客,相册,免费相册,活动,举办活动,商机,免费商机,电子商务,网上交易,买卖信息,开论坛,免费论坛,OA,CRM,Office,白领,SOHO,软件,免费软件,办公自动化,ERP,MIS" />
+    <meta name="description" content="上海向杰信息科技有限公司（Jet Information）是一家专业提供各种信息服务的高科技公司，产品服务涵盖网站建设，网络通讯，电子商务，系统开发等多个方面，公司致力于成为企业网络领域最专业的信息服务提供商！" />
+   
+   <script src="js/jquery-1.7.2.min.js"></script>
+
+   <!-- creat by myselft start -->
+   <link rel="stylesheet" type="text/css" href="css/reset.css">
+   <link rel="stylesheet" type="text/css" href="css/common.css">
+ 
+
+
+   
+</head>
+<body>
+
+
+<div class="box">
+    8664646645
+    <a  href="javascript:">aa</a>
+    133332
+
+</div>
+
+    <script>
+        //阻止事件冒泡的通用函数
+        function stopBubble(e) {
+            // 如果传入了事件对象，那么就是非ie浏览器
+            if (e && e.stopPropagation) {
+                //因此它支持W3C的stopPropagation()方法
+                e.stopPropagation();
+            } else {
+                //否则我们使用ie的方法来取消事件冒泡
+                window.event.cancelBubble = true;
+            }
+        }
+        $(function () {
+            $(".box").click(function () {
+                alert("box");
+
+            });
+
+            $("a").click(function (e) {
+                alert("a");
+                stopBubble(e);
+
+            });
+        })
+
+    </script>
+
+
+
+</body>
+</html>
+
+
+

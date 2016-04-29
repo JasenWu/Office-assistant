@@ -1,0 +1,314 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <title>上海向杰信息科技有限公司 - 专业信息服务提供商</title>
+    <link rel="icon" href="images/favicon.ico"  type="image/x-icon">
+    <meta name="keywords" content="网站建设,团队平台,网站,网站维护,域名注册,空间主机,web,企业邮箱,在线客服,即时通讯,嵌入,通讯,空间,免费空间,博客,免费博客,相册,免费相册,活动,举办活动,商机,免费商机,电子商务,网上交易,买卖信息,开论坛,免费论坛,OA,CRM,Office,白领,SOHO,软件,免费软件,办公自动化,ERP,MIS" />
+    <meta name="description" content="上海向杰信息科技有限公司（Jet Information）是一家专业提供各种信息服务的高科技公司，产品服务涵盖网站建设，网络通讯，电子商务，系统开发等多个方面，公司致力于成为企业网络领域最专业的信息服务提供商！" />
+   
+
+   <link rel="stylesheet" type="text/css" href="css/pubic.css">
+   <script src="js/jquery-1.7.2.min.js"></script>
+   
+   <!-- creat by myselft start -->
+   <link rel="stylesheet" type="text/css" href="css/reset.css">
+   <link rel="stylesheet" type="text/css" href="css/common.css">
+   <link rel="stylesheet" type="text/css" href="css/index.css">
+ 
+    <!--[if IE 6]>
+    <script type="text/javascript" src="js/iepngfix_tilebg.js"></script>
+    <style>div,ul,li,dl,dd,ol,i,em,input,a { behavior: url("js/iepngfix.htc"); }</style>
+    <![endif]-->
+     
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript">
+
+            var tineOut;//setTimeout变量
+            var autostart;//init 自动动行变量 setInterval
+            var left = 0;
+
+            function whitchButtonOn() {
+                switch (left) {
+                    case -1024:
+                        $("#page .hd  ul li").removeClass("on");
+                        $("#page .hd  ul li").eq(0).addClass("on");
+                        break;
+                    case -2048:
+                        $("#page .hd  ul li").removeClass("on");
+                        $("#page .hd  ul li").eq(1).addClass("on");
+                        break;
+                    case -3072:
+                        $("#page .hd  ul li").removeClass("on");
+                        $("#page .hd  ul li").eq(2).addClass("on");
+                        break;
+                    case -4096:
+                        $("#page .hd  ul li").removeClass("on");
+                        $("#page .hd  ul li").eq(3).addClass("on");
+                        break;
+
+                    case -5120:
+                        $("#page .hd  ul li").removeClass("on");
+                        $("#page .hd  ul li").eq(4).addClass("on");
+                        break;
+
+
+                }
+
+            }
+
+
+            //往左滚函数
+            function scrollLeft() {
+                left = parseInt($(".slides").css("left"));
+                //alert(left);
+                if (left >= -1024) {
+                    left = -5120;
+                }
+                left += 1024;
+
+                //alert(left);
+
+                $(".slides").css("left", left).animate({ "opacity": 0.2 },0).animate({ "opacity":1 }, 1000);//效果和移位
+
+
+                whitchButtonOn();   //哪个触控按钮在当前状态    
+
+
+            }
+            //往右滚函数
+            function scrollRight() {
+
+                left = parseInt($(".slides").css("left"));
+                // alert(left);
+                if (left <= -5120) {
+                    left = 0;
+                }
+                left -= 1024;
+
+                //alert(left);
+
+                $(".slides").css("left", left).animate({ "opacity": 0.2 },0).animate({ "opacity":1 }, 1000);//效果和移位
+
+
+
+                whitchButtonOn();   //哪个触控按钮在当前状态       
+
+
+
+
+            }
+
+            //自动执行函数
+            function autoStart() {
+                autostart = self.setInterval("scrollRight()", 4000);//间隔一秒钟执行一次
+            }
+
+
+
+            //页面初始化3秒后自动执行
+            function intStart() {
+                tineOut = setTimeout("autoStart()", 4000);
+            }
+
+
+
+            //停止初始化3秒执行的函数
+            function stopIntStart() {
+                clearTimeout(autostart);//停止初始化执行
+
+            }
+
+            function stopAutoStart() {
+                start = window.clearInterval(autostart);//停止自动执行
+
+            }
+
+
+            $(function () {
+
+                //页面加载初始化
+                intStart();
+                /**********pre 按钮 start*********************************/
+
+                ////点击向次移动一张
+                //$("#pre").click(function () {
+                //    stopAutoStart();///停止自动执行
+                //    stopIntStart();//停止初始化执行
+                //    scrollLeft();//向左滚动
+                //});
+
+
+                ///**********next 按钮 start*********************************/
+
+
+                ////点击向后移动一张
+                //$("#next").click(function () {
+                //    stopAutoStart();///停止自动执行
+                //    stopIntStart();//停止初始化执行
+                //    scrollRight();//向右滚动
+                //});
+
+
+                //鼠标点击图上的圆点控制banner图的显示
+
+                $("#page .hd  ul li").each(function () {
+                    $(this).click(function () {
+                        var index = $(this).index();
+                        //alert(index);
+                        //哪个图片对应显示
+                        switch (index) {
+
+                            case 0:
+                                $(".slides").css("left", -1024).animate({ "opacity": 0.2 },0).animate({ "opacity":1 }, 1000);//效果和移位
+                                break;
+
+                            case 1:
+                                $(".slides").css("left", -2048).animate({ "opacity": 0.2 },0).animate({ "opacity":1 }, 1000);//效果和移位
+                                break;
+
+                            case 2:
+                                $(".slides").css("left", -3072).animate({ "opacity": 0.2 },0).animate({ "opacity":1 }, 1000);//效果和移位
+                                break;
+
+                            case 3:
+                                $(".slides").css("left", -4096).animate({ "opacity": 0.2 },0).animate({ "opacity":1 }, 1000);//效果和移位
+                                break;
+
+                            case 4:
+                                $(".slides").css("left", -5120).animate({ "opacity": 0.2 },0).animate({ "opacity":1 }, 1000);//效果和移位
+                                break;
+
+
+
+                        }
+                        left = parseInt($(".slides").css("left"));//获取left值
+                        whitchButtonOn();   //哪个触控按钮在当前状态      
+                    });
+                });
+
+                //鼠标移入banner区域停止自动运行
+                $("#page .hd").mouseover(function () {
+                   // alert(0);
+                    stopAutoStart();///停止自动执行
+                    stopIntStart();//停止初始化执行
+                    $(".slides").stop(true);//清除元素所有动画
+
+                });
+
+                //鼠标离开banner继续自动运行
+                $("#page").mouseleave(function () {
+                    // alert(1);
+                    $(".slides").stop();//清除元素所有动画
+                    intStart();//初始化运行
+
+                });
+
+
+            });
+    </script>
+
+    <script src="js/jquery.mobile-1.4.2.min.js"></script>
+        <script type="text/javascript">
+
+            $(function () {
+
+                //移动端左滑动
+                $("#page").on("swipeleft", function () {
+
+                    scrollRight();
+                });
+                //移动端右滑动
+                $("#page").on("swiperight", function () {
+
+                    scrollLeft();
+                });
+            });
+    </script>
+
+</head>
+<body>
+<!--head -->
+<div class="main_head">
+	<div class="main_head_center">
+        <div class="logo f-fl"><img class="logo_img"   src="img/face/logo.png"  alt=""></div>
+        <a class="download f-fl" href="javascript:void(0)">
+            <img class="f-fl download_img" src="img/face/download.png" alt="">
+            <span  class="f-fl">下载</span>
+        </a>        
+        <ul class="main_head_right f-fr">
+            <li class="main_head_right_list login f-fl"><a href="javascript:void(0)">登&nbsp;录</a></li>
+            <li class="main_head_right_list login f-fl"><a href="javascript:void(0)">创&nbsp;建</a></li>
+            <li class="main_head_right_list admin f-fl"><a href="javascript:void(0)">管理员登录</a></li>
+        </ul>
+    </div>
+</div> 
+<!--end head   -->
+<div id="page"> 
+
+	
+    <div class="flexslider">
+    	<ul class="slides">
+             <li>
+                <a href="javascript:void(0)"><img src="img/face/5.jpg"  alt="" /></a>
+                <p>同事、讨论组即时通讯，同时支持在线客服</p>
+
+            </li>
+
+            <li>
+                <a href="javascript:void(0)"><img src="img/face/1.jpg"  alt="" /></a>
+                <p>面向公司、组织的办公平台</p>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="img/face/2.jpg"  alt="" /></a>
+                <p>完整的通讯录，从各种设备导入统一管理</p>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="img/face/3.jpg"  alt="" /></a>
+                <p>一个位置存储所有文档，与同事分享</p>
+            </li>
+             <li>
+                <a href="javascript:void(0)"><img src="img/face/4.jpg"  alt="" /></a>
+                <p>多个邮件账号，一个收发平台</p>
+
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="img/face/5.jpg"  alt="" /></a>
+                <p>同事、讨论组即时通讯，同时支持在线客服</p>
+
+            </li>
+
+            <li>
+                <a href="javascript:void(0)"><img src="img/face/1.jpg"  alt="" /></a>
+                <p>面向公司、组织的办公平台</p>
+            </li>
+            
+        </ul>
+    </div>
+
+    <div class="hd">
+        <ul>
+            <li class="on">欢迎</li>
+            <li style="padding-top:10px; height:52px;">通讯录</li>
+            <li>文件</li>
+            <li>邮件</li>
+            <li>通讯</li>
+        </ul>
+
+    </div>
+</div>
+
+<!--footer start -->
+<div class="footer_wrap">
+    <div class="footer">
+        <h1>向杰信息科技</h1>
+        <div><a href="javascript:void(0)">用户协议</a>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)"> 隐私声明</a>&nbsp;&nbsp;&nbsp;©2014 Jet Information 沪ICP备11001479号-2</div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
